@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/03/14/高精度加法/"/>
+    <link rel="canonical" href="http://example.com/2023/03/20/冒泡排序/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="高精度加法">
+    <meta property="og:title" content="冒泡排序">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.com2023/03/14/高精度加法/">
+    <meta property="og:url" content="http://example.com2023/03/20/冒泡排序/">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="福泽的博客">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="高精度加法">
+    <meta name="twitter:title" content="冒泡排序">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            高精度加法 -
+            冒泡排序 -
         
         福泽的博客
     </title>
@@ -181,7 +181,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">高精度加法</h1>
+                    <h1 class="article-title-regular">冒泡排序</h1>
                 </div>
             
                 
@@ -203,15 +203,15 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-03-14 22:36:46</span>
-        <span class="mobile">2023-03-14 22:36</span>
+        <span class="pc">2023-03-20 21:24:28</span>
+        <span class="mobile">2023-03-20 21:24</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-14 22:39:10</span>
-            <span class="mobile">2023-03-14 22:39</span>
+            <span class="pc">2023-03-20 21:58:27</span>
+            <span class="mobile">2023-03-20 21:58</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -235,28 +235,22 @@
             
 
             <div class="article-content markdown-body">
-                <p>Dont’t let the noise of others’opnions down out your own inner voice<br>算法更新第一章，高精度。c&#x2F;c++中的整型数据类型都是有限的，如在进行几十位，几百为的数字计算问题时<br>long long 和double 的数据范围显然不够用，而因此我们需要引入新的算法，叫高精度算法</p>
-<h3 id="高精度思想"><a href="#高精度思想" class="headerlink" title="高精度思想"></a>高精度思想</h3><p>本质上为字符串模拟数学上的竖式运算，一位一位进行加减</p>
-<h3 id="算法核心"><a href="#算法核心" class="headerlink" title="算法核心"></a>算法核心</h3><p>1、通过字符串输入，2、转换为整型，3、从后往前加，4、各位相加进位制，5、逆序输出</p>
-<p>主要核心代码：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c[i]+=a[i]+b[i]</span><br><span class="line">c[i+1]=c[i]/10  //满十进位</span><br><span class="line">c[i]=c[i]%10     //进位之后取个位</span><br></pre></td></tr></table></figure></div>
+                <p>久临深潭，才可登高峰。<br>算法第二章”冒泡排序“，对于一组整数想要将其从小到大排序这时就得用到冒泡排序，<br>冒泡排序法，如其名，就是将前一位与后一位比较，如冒泡一样一个个的往上排是一种非常常见的小算法。</p>
+<p>###冒泡排序思想</p>
+<p>(1)两两比较相邻元素A(I)和A(I+1)(I&#x3D;1,2,…N-1),如果A(I)&gt;A(I+1),则交换A(I)和A(I+1)的位置；</p>
+<p>(2)对剩下的N-1个元素，再两两进行比较，按同样规则交换它们的位置,经过N-2次比较,将次最大值交换到A(N-1)的位置;</p>
+<p>(3)如法炮制,经过N-1趟的“冒泡处理”,每趟进行N-i次的比较,全部数列有序。<br>本质为a[i]与a[i+1]的逐个比较然后交换位置，依次类推。</p>
+<p>###算法核心</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int temp = a[j];</span><br><span class="line">a[j] = a[j+1];</span><br><span class="line">a[j+1] = temp;</span><br></pre></td></tr></table></figure></div>
 
-<p>核心1：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;str1&gt;&gt;str2;</span><br><span class="line">int la,lb,lc;</span><br><span class="line">la=str1.size();</span><br><span class="line">lb=str2.size();</span><br></pre></td></tr></table></figure></div>
-<p>输入字符串并求出字符串长度，方便后面位运算</p>
-<p>核心2：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int i=0;i&lt;la;i++)</span><br><span class="line">   a[la-i]=str1[i]-&#x27;0&#x27;;</span><br><span class="line">for(int i=0;i&lt;lb;i++)</span><br><span class="line">   b[lb-i]=str2[i]-&#x27;0&#x27;;</span><br></pre></td></tr></table></figure></div>
-<p>将字符型转换成整型只需要减去字符‘0’，或者减去它的ASCII所代表的整数。</p>
-<p>核心3，4：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(int i=0;i&lt;=lc;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		c[i]+=a[i]+b[i];</span><br><span class="line">		c[i+1]=c[i]/10;</span><br><span class="line">		c[i]=c[i]%10;</span><br><span class="line">		 &#125;</span><br></pre></td></tr></table></figure></div>
-<p>注：if(c[lc]&#x3D;&#x3D;0&amp;&amp;lc&gt;0)<br>    lc–;<br>此为排除第一位为0的情况，防止后面逆序输出第一位为0。</p>
-<p>核心五：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(int i=lc;i&gt;0;i--)</span><br><span class="line">	cout&lt;&lt;c[i];</span><br></pre></td></tr></table></figure></div>
+<p>###注意细节<br>1、n个数只需循环n-1次，也就是第一个for循环只需要n-1次循环一次来遍历，因为为两个数比较得来所以只需遍历n-1次<br>2、第二个循环只需遍历n-i-1次，因为每一趟都是从头与后面的所有数比较，所有没走一趟便排好一个数，且如一同理为两个数比较所有为n-i-1次</p>
+<p>细节代码</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for(int i=0;i&lt;n-1;i++)</span><br><span class="line">	for (int j = 0; j &lt; n - 1 - i; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				int temp = a[j];</span><br><span class="line">				a[j] = a[j+1];</span><br><span class="line">				a[j+1] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>逆序输出即可</p>
-<h3 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//算法核心，1、通过字符串输入，2、从后往前加，3、核心：各位相加进位制；4、逆序输出； </span><br><span class="line">//c[i]+=a[i]+b[i&#125;</span><br><span class="line">//c[i+1]=c[i]/10;</span><br><span class="line">//c[i]=c[i]%10;</span><br><span class="line"></span><br><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">string str1,str2;</span><br><span class="line">int a[505],b[505],c[505];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;str1&gt;&gt;str2;</span><br><span class="line">	 int la,lb,lc;</span><br><span class="line">	    la=str1.size();</span><br><span class="line">	    lb=str2.size();</span><br><span class="line">	</span><br><span class="line">	for(int i=0;i&lt;la;i++)</span><br><span class="line">		a[la-i]=str1[i]-&#x27;0&#x27;;</span><br><span class="line">	for(int i=0;i&lt;lb;i++)</span><br><span class="line">	    b[lb-i]=str2[i]-&#x27;0&#x27;;</span><br><span class="line">	   </span><br><span class="line">	    lc=max(la,lb)+1;//方便逆序输出，以及进位</span><br><span class="line">	for(int i=0;i&lt;=lc;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		c[i]+=a[i]+b[i];</span><br><span class="line">		c[i+1]=c[i]/10;</span><br><span class="line">		c[i]=c[i]%10;</span><br><span class="line">		 &#125;	 </span><br><span class="line">	if(c[lc]==0&amp;&amp;lc&gt;0)</span><br><span class="line">	lc--;</span><br><span class="line">	for(int i=lc;i&gt;0;i--)</span><br><span class="line">	cout&lt;&lt;c[i];</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>利用字符串进行输入然后进行数字的位运算<br>在实现该算法时首先得把握核心<br>其次，注意细节实现<br>如：第一位为0，提前做好进位的铺垫等；<br>end…..</p>
+<p>###总结及全部代码实现</p>
+<p>冒泡排序法为前后两个的逐个比较，以及一遍又一遍的将其排序，把握每重循环循环的次数以及前后交换为算法的重点。</p>
+<p>全部代码：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[10000];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	for (int i = 0; i &lt; n; i++)</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	for(int i=0;i&lt;n-1;i++)</span><br><span class="line">		for (int j = 0; j &lt; n - 1 - i; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				int temp = a[j];</span><br><span class="line">				a[j] = a[j+1];</span><br><span class="line">				a[j+1] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	for (int i = 0; i &lt; n; i++)</span><br><span class="line">		cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
             </div>
 
@@ -264,11 +258,11 @@
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：高精度加法</li>
+        <li>Post title：冒泡排序</li>
         <li>Post author：福泽</li>
-        <li>Create time：2023-03-14 22:36:46</li>
+        <li>Create time：2023-03-20 21:24:28</li>
         <li>
-            Post link：https://yx1125.github.io/2023/03/14/高精度加法/
+            Post link：https://yx1125.github.io/2023/03/20/冒泡排序/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -286,29 +280,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/03/20/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">冒泡排序</span>
-                                    <span class="post-nav-item">Prev posts</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/03/06/hello-world/"
+                            href="/2023/03/14/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">第一篇博客</span>
+                                    <span class="post-nav-title-item">高精度加法</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -329,8 +308,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">高精度加法</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%80%9D%E6%83%B3"><span class="nav-text">高精度思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%A0%B8%E5%BF%83"><span class="nav-text">算法核心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E4%BB%A3%E7%A0%81"><span class="nav-text">全部代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
+        <div class="page-title">冒泡排序</div>
+        
 
     </div>
 </div>
