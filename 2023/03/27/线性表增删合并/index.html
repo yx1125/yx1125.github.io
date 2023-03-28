@@ -9,18 +9,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/03/20/冒泡排序/"/>
+    <link rel="canonical" href="http://example.com/2023/03/27/线性表增删合并/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="冒泡排序">
+    <meta property="og:title" content="线性表增删合并">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.com2023/03/20/冒泡排序/">
+    <meta property="og:url" content="http://example.com2023/03/27/线性表增删合并/">
     <meta property="og:image" content="/images/redefine-logo.svg">
     <meta property="og:site_name" content="福泽的博客">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="冒泡排序">
+    <meta name="twitter:title" content="线性表增删合并">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -31,7 +31,7 @@
     
     <title>
         
-            冒泡排序 -
+            线性表增删合并 -
         
         福泽的博客
     </title>
@@ -181,7 +181,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">冒泡排序</h1>
+                    <h1 class="article-title-regular">线性表增删合并</h1>
                 </div>
             
                 
@@ -203,15 +203,15 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-03-20 21:24:28</span>
-        <span class="mobile">2023-03-20 21:24</span>
+        <span class="pc">2023-03-27 21:52:26</span>
+        <span class="mobile">2023-03-27 21:52</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-21 19:06:54</span>
-            <span class="mobile">2023-03-21 19:06</span>
+            <span class="pc">2023-03-28 20:05:11</span>
+            <span class="mobile">2023-03-28 20:05</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -235,19 +235,17 @@
             
 
             <div class="article-content markdown-body">
-                <p>久临深潭，才可登高峰。<br>算法第二章”冒泡排序“，对于一组整数想要将其从小到大排序这时就得用到冒泡排序，<br>冒泡排序法，如其名，就是将前一位与后一位比较，如冒泡一样一个个的往上排是一种非常常见的小算法。</p>
-<h3 id="冒泡排序思想"><a href="#冒泡排序思想" class="headerlink" title="冒泡排序思想"></a>冒泡排序思想</h3><p>(1)两两比较相邻元素A(I)和A(I+1)(I&#x3D;1,2,…N-1),如果A(I)&gt;A(I+1),则交换A(I)和A(I+1)的位置；</p>
-<p>(2)对剩下的N-1个元素，再两两进行比较，按同样规则交换它们的位置,经过N-2次比较,将次最大值交换到A(N-1)的位置;</p>
-<p>(3)如法炮制,经过N-1趟的“冒泡处理”,每趟进行N-i次的比较,全部数列有序。<br>本质为a[i]与a[i+1]的逐个比较然后交换位置，依次类推。</p>
-<h3 id="算法核心"><a href="#算法核心" class="headerlink" title="算法核心"></a>算法核心</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int temp = a[j];</span><br><span class="line">a[j] = a[j+1];</span><br><span class="line">a[j+1] = temp;</span><br></pre></td></tr></table></figure></div>
+                <p>线性表线性表的增删合并，为数据结构中最常见的算法，其本质为数据的覆盖。</p>
+<h3 id="线性表元素的增添"><a href="#线性表元素的增添" class="headerlink" title="线性表元素的增添"></a>线性表元素的增添</h3><p>其主要思路为找出需要增加的位置，然后通过需增加位置的后一个内存覆盖前一个内存来实现增加<br>如存在一个线性表：1 2 3 4 5，需要在2号位增加一个元素3，首先需找到2这个位置，在数组中2这个位置的下标为i-1.<br>然后把后一位的数据用前一个数据来覆盖，即a[i+1]&#x3D;a[i],接着再把i位置赋值为3即可。<br>代码为：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">if((i&lt;1) || (i&gt;L-&gt;last+2)) /*首先判断插入位置是否合法*/</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;插入位置i值不合法&quot;);</span><br><span class="line">	return(ERROR);</span><br><span class="line">&#125;</span><br><span class="line">if(L-&gt;last&gt;= MAXSIZE-1)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;表已满无法插入&quot;);</span><br><span class="line">	return(ERROR);</span><br><span class="line">&#125;</span><br><span class="line">for(k=L-&gt;last;k&gt;=i-1;k--)   /*为插入元素而移动位置*/</span><br><span class="line">	L-&gt;elem[k+1]=L-&gt;elem[k];</span><br><span class="line">L-&gt;elem[i-1]=e;   /*在C语言数组中，第i个元素的下标为i-1*/</span><br><span class="line">L-&gt;last++;</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="注意细节"><a href="#注意细节" class="headerlink" title="注意细节"></a>注意细节</h3><p>1、n个数只需循环n-1次，也就是第一个for循环只需要n-1次循环一次来遍历，因为为两个数比较得来所以只需遍历n-1次<br>2、第二个循环只需遍历n-i-1次，因为每一趟都是从头与后面的所有数比较，所有没走一趟便排好一个数，且如一同理为两个数比较所有为n-i-1次</p>
-<p>细节代码</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for(int i=0;i&lt;n-1;i++)</span><br><span class="line">	for (int j = 0; j &lt; n - 1 - i; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				int temp = a[j];</span><br><span class="line">				a[j] = a[j+1];</span><br><span class="line">				a[j+1] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="线性表的删除"><a href="#线性表的删除" class="headerlink" title="线性表的删除"></a>线性表的删除</h3><p>线性表删除的思路为将所需删除位置的后面所有元素向前移，再将整体长度减一</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">if((i&lt;1) || (i&gt;L-&gt;last+2)) /*首先判断插入位置是否合法*/</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;插入位置i值不合法&quot;);</span><br><span class="line">	return(ERROR);</span><br><span class="line">&#125;</span><br><span class="line">if(L-&gt;last&gt;= MAXSIZE-1)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;表已满无法插入&quot;);</span><br><span class="line">	return(ERROR);</span><br><span class="line">&#125;</span><br><span class="line">for(k=L-&gt;last;k&gt;=i-1;k--)   /*为插入元素而移动位置*/</span><br><span class="line">	L-&gt;elem[k+1]=L-&gt;elem[k];</span><br><span class="line">L-&gt;elem[i-1]=e;   /*在C语言数组中，第i个元素的下标为i-1*/</span><br><span class="line">L-&gt;last++;</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="总结及全部代码实现"><a href="#总结及全部代码实现" class="headerlink" title="总结及全部代码实现"></a>总结及全部代码实现</h3><p>冒泡排序法为前后两个的逐个比较，以及一遍又一遍的将其排序，把握每重循环循环的次数以及前后交换为算法的重点。</p>
-<p>全部代码：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[10000];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	for (int i = 0; i &lt; n; i++)</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	for(int i=0;i&lt;n-1;i++)</span><br><span class="line">		for (int j = 0; j &lt; n - 1 - i; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				int temp = a[j];</span><br><span class="line">				a[j] = a[j+1];</span><br><span class="line">				a[j+1] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	for (int i = 0; i &lt; n; i++)</span><br><span class="line">		cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="线性表的合并"><a href="#线性表的合并" class="headerlink" title="线性表的合并"></a>线性表的合并</h3><p>线性表合并的思路为：将La与Lb表的元素做对比，将小的一个存入Lc表中，整体通过while循环来实现对2个数组的遍历<br>注：加入其中一个表中的内容已经全部排完，那么只需要将没存入的部分直接接入后面就行。<br>代码：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">void merge(SeqList *LA, SeqList *LB, SeqList *LC)&#123;</span><br><span class="line">	int i,j,k;</span><br><span class="line">	i=0;j=0;k=0; //i，j，k分别是LA，LB，LC的临时指针 </span><br><span class="line">	while(i&lt;=LA-&gt;last&amp;&amp;j&lt;=LB-&gt;last)</span><br><span class="line">		if(LA-&gt;elem[i]&lt;=LB-&gt;elem[j])&#123;</span><br><span class="line">			LC-&gt;elem[k]= LA-&gt;elem[i];</span><br><span class="line">			i++; </span><br><span class="line">			k++;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			LC-&gt;elem[k]=LB-&gt;elem[j];</span><br><span class="line">			j++; </span><br><span class="line">			k++;</span><br><span class="line">        &#125;</span><br><span class="line">	while(i&lt;=LA-&gt;last)&#123;	/*当表LA有剩余元素时，则将表LA余下的元素赋给表LC*/</span><br><span class="line">		LC-&gt;elem[k]= LA-&gt;elem[i];</span><br><span class="line">		i++; </span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	while(j&lt;=LB-&gt;last)&#123;  /*当表LB有剩余元素时，则将表LB余下的元素赋给表LC*/		</span><br><span class="line">		LC-&gt;elem[k]= LB-&gt;elem[j];</span><br><span class="line">		j++; </span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	LC-&gt;last=LA-&gt;last+LB-&gt;last+1;</span><br><span class="line">	/*LC的“元素个数”是LA的元素个数（LA-&gt;last+1）和LB的元素个数（LB-&gt;last+1）之和</span><br><span class="line">	 即LA-&gt;last+1+LB-&gt;last+1  =&gt; LA-&gt;last+LB-&gt;last+2。</span><br><span class="line">	 但此时需要得到的是LC的最后一个元素的下标，故 LA-&gt;last+LB-&gt;last+1</span><br><span class="line">	 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上三个算法核心为内存覆盖，难点为覆盖的方法，以及下标的判断<br>ending…</p>
 
             </div>
 
@@ -255,11 +253,11 @@
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：冒泡排序</li>
+        <li>Post title：线性表增删合并</li>
         <li>Post author：福泽</li>
-        <li>Create time：2023-03-20 21:24:28</li>
+        <li>Create time：2023-03-27 21:52:26</li>
         <li>
-            Post link：https://yx1125.github.io/2023/03/20/冒泡排序/
+            Post link：https://yx1125.github.io/2023/03/27/线性表增删合并/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -277,29 +275,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/03/27/%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%A2%9E%E5%88%A0%E5%90%88%E5%B9%B6/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">线性表增删合并</span>
-                                    <span class="post-nav-item">Prev posts</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/03/14/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/"
+                            href="/2023/03/20/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">高精度加法</span>
+                                    <span class="post-nav-title-item">冒泡排序</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -320,8 +303,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">冒泡排序</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%80%9D%E6%83%B3"><span class="nav-text">冒泡排序思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%A0%B8%E5%BF%83"><span class="nav-text">算法核心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%BB%86%E8%8A%82"><span class="nav-text">注意细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E5%8F%8A%E5%85%A8%E9%83%A8%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">总结及全部代码实现</span></a></li></ol>
+        <div class="page-title">线性表增删合并</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%85%83%E7%B4%A0%E7%9A%84%E5%A2%9E%E6%B7%BB"><span class="nav-text">线性表元素的增添</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-text">线性表的删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%90%88%E5%B9%B6"><span class="nav-text">线性表的合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
 
     </div>
 </div>
